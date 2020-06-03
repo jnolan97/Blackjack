@@ -12,13 +12,15 @@ class Blackjack():
         for i,v in enumerate(suites*13):
             self.cards_dict[i] = v
        # print(self.cards_dict)
-        print (self.cards_dict)
+        return (self.cards_dict)
     
-    # def assignType(self):
-    #     for k in self.cards_dict.keys():
-    #         if k % 4 == 0:
-    #             self.cards_dict[2] = self.card_dict.pop(k)
-    #     print(self.cards_dict)
+    def assignType(self):
+        kinds = ['2','3','4','5','6','7','8','9','10','Jack','Queen','King','Ace']
+        final_dict = dict(zip(kinds, list(self.cards_dict.values())))
+        # for k in self.cards_dict.keys():
+        #     if self.cards_dict[int(k)] % 4 == 0:
+        #         self.cards_dict[2] = self.card_dict.pop(k)
+        print(final_dict)
 
 
 
@@ -29,7 +31,7 @@ def play():
         response = input("What do you want to do: play/exit: ")
         if response.lower() == "deal":
             jack.makeDeck()
-            # jack.assignType()
+            jack.assignType()
         if response.lower() == "exit":
             break
 play()
