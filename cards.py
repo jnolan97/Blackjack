@@ -9,17 +9,22 @@ class Blackjack():
     def makeDeck(self):
         self.cards_dict = {}
         suites = ['hearts','diamonds','spades','clubs']
-        for i,v in enumerate(suites*13):
+        for i,v in enumerate(suites):
             self.cards_dict[i] = v
        # print(self.cards_dict)
-        return (self.cards_dict)
     
     def assignType(self):
         kinds = ['2','3','4','5','6','7','8','9','10','Jack','Queen','King','Ace']
-        final_dict = dict(zip(kinds, list(self.cards_dict.values())))
-        # for k in self.cards_dict.keys():
-        #     if self.cards_dict[int(k)] % 4 == 0:
-        #         self.cards_dict[2] = self.card_dict.pop(k)
+        test = len(self.cards_dict.keys())
+        print(test)
+        final_dict = {}
+        count = 0
+        while kinds[count] != 'Ace' and self.cards_dict[count] != 'clubs':
+            final_dict[kinds[count]] = self.cards_dict[count]
+            count += 1
+
+        # for k in range(len(self.cards_dict.keys())):
+        #     final_dict = dict(zip(kinds[k], list(self.cards_dict.values())))
         print(final_dict)
 
 
